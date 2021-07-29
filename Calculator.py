@@ -5,9 +5,9 @@ def input1(event):
     text = event.widget.cget("text")
     # print(text)
 
-    if text == "=":  ## WHen = is pressed evaluate all the operations
+    if text == "=":  
         try:
-            # evaluating the result for str
+            
             result = eval(str(value.get()))
             value.set(result)
         except Exception as e:
@@ -16,18 +16,17 @@ def input1(event):
 
     elif text == "DEL":
         try:
-            fullstring = value.get()   ## get the number from the screen
-            newstring = fullstring.replace(fullstring[-1], "") ## Remove last digit
-            value.set(newstring) ## set the new number as value
+            fullstring = value.get()   
+            newstring = fullstring.replace(fullstring[-1], "") 
+            value.set(newstring) 
 
-            # print(newstring) 
-            entry1.update()  ## Enter the updated number    ## eg->  567 --> 56
+            entry1.update()  
         except Exception as e:
             print(e) 
 
     elif text == "C":
-        value.set("")  ## set the screen as blank
-        entry1.update()  ## update the screen
+        value.set("")  
+        entry1.update()  
     else:
         value.set(value.get() + text)
         entry1.update()
